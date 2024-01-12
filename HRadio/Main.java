@@ -1,7 +1,14 @@
 import java.util.Scanner;
+
+/*Curso: Estructura de Datos 
+ * Catedratico: Pablo Godoy
+ * Sección: 41
+ * Programadores: Andrés Mazariegos y Daniel Jurez 
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Radio miradio= new Radio();
 
         while (true) {
             System.out.println("\n*** Menú de Radio ***");
@@ -18,6 +25,9 @@ public class Main {
                 case 1:
                     break;
                 case 2:
+                miradio.SwitchAMFM(); 
+
+
                     break;
                 case 3:
                     break;
