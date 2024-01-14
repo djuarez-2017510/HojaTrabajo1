@@ -23,11 +23,10 @@ public class Main {
 
             switch (choice) {
                 case 1:
+                miradio.SwitchOnOff();
                     break;
                 case 2:
                 miradio.SwitchAMFM(); 
-
-
                     break;
                 case 3:
                     break;
