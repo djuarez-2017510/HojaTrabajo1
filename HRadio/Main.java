@@ -26,16 +26,26 @@ public class Main {
                 miradio.SwitchOnOff();
                     break;
                 case 2:
-                miradio.SwitchAMFM(); 
+                if(miradio.isOn()){
+                    miradio.SwitchAMFM();
+                }else{
+                    System.out.println("La radio no esta encendida");
+                }
                     break;
                 case 3:
+                if(miradio.isOn()){
+                    System.out.println("La estación actual: " + miradio.nextStation());
+                }else{
+                    System.out.println("La radio no esta encendida");
+                }
                     break;
                 case 4:
                     break;
                 case 5:
                     break;
                 case 0:
-                
+                System.out.println("Saliendo del programa");
+                System.exit(0);
                 default:
                     System.out.println("No es una opción valida");
             }
