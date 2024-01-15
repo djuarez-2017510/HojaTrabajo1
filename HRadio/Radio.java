@@ -79,17 +79,26 @@ public class Radio implements IRadio {
         if (isAM()) {
             if (id >= 0 && id < ArrayAM.length) {
                 estacionSeleccionada = ArrayAM[id];
-                System.out.println("La radio se ha movido a la estacion asignada en el boton " + id + " en la frecuencia AM: " + estacionSeleccionada);
-                numberAM = estacionSeleccionada;
-            } else {
+                if(estacionSeleccionada != 0.0){
+                    System.out.println("La radio se ha movido a la estacion asignada en el boton " + (id+1) + " en la frecuencia AM: " + estacionSeleccionada);
+                    numberAM = estacionSeleccionada;
+                } else {
+                System.out.println("El boton no tiene asignada ninguna estacion");
+                }
+            } else{
                 System.out.println("Posición no válida para la frecuencia AM.");
             }
+                
         } else {
             if (id >= 0 && id < ArrayFM.length) {
                 estacionSeleccionada = ArrayFM[id];
-                System.out.println("La radio se ha movido a la estacion asignada en el boton " + id + " en la frecuencia FM: " + estacionSeleccionada);
-                numberFM = estacionSeleccionada;
-            } else {
+                if(estacionSeleccionada != 0.0){
+                    System.out.println("La radio se ha movido a la estacion asignada en el boton " + (id+1) + " en la frecuencia FM: " + estacionSeleccionada);
+                    numberFM = estacionSeleccionada;
+                } else {
+                System.out.println("El boton no tiene asignada ninguna estacion");
+                }
+            } else{
                 System.out.println("Posición no válida para la frecuencia FM.");
             }
         }
