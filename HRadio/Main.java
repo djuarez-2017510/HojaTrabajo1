@@ -9,6 +9,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Radio miradio= new Radio();
+        /**
+     * Método principal que proporciona un menú interactivo para controlar la radio.
+     *
+     * @param args Argumentos de línea de comandos (no se utilizan en este caso).
+     */
 
         while (true) {
             System.out.println("\n*** Menú de Radio ***");
@@ -76,6 +81,7 @@ public class Main {
                 System.out.println("Debe ingresar un valor numerico");
                 scanner.nextLine();
             }
+            scanner.close();
         }
     }
 }
