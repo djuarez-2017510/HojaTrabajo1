@@ -5,8 +5,8 @@
 public class Radio implements IRadio {
 
     private boolean state; // Representa si la radio está encendida (true) o apagada (false).
-    private double[] ArrayAM = new double[11]; // Arreglo para almacenar estaciones AM guardadas.
-    private double[] ArrayFM = new double[11]; // Arreglo para almacenar estaciones FM guardadas.
+    private double[] arrayAM = new double[11]; // Arreglo para almacenar estaciones AM guardadas.
+    private double[] arrayFM = new double[11]; // Arreglo para almacenar estaciones FM guardadas.
     private boolean amfm; // Representa la banda de frecuencia actual: false para AM, true para FM.
     protected int numberAM = 530; // Representa la frecuencia AM actual.
     protected double numberFM = 87.9; // Representa la frecuencia FM actual.
@@ -96,14 +96,14 @@ public class Radio implements IRadio {
      */
     public void SaveStation(int id, double number) {
         if (isAM()) {
-            if (id >= 0 && id < ArrayAM.length) {
-                ArrayAM[id] = number;
+            if (id >= 0 && id < arrayAM.length) {
+                arrayAM[id] = number;
             } else {
                 System.out.println("Posición no válida para la frecuencia AM.");
             }
         } else {
-            if (id >= 0 && id < ArrayFM.length) {
-                ArrayFM[id] = number;
+            if (id >= 0 && id < arrayFM.length) {
+                arrayFM[id] = number;
             } else {
                 System.out.println("Posición no válida para la frecuencia FM.");
             }
@@ -119,12 +119,12 @@ public class Radio implements IRadio {
         double estacionSeleccionada = 0.0;
 
         if (isAM()) {
-            if (id >= 0 && id < ArrayAM.length) {
-                estacionSeleccionada = ArrayAM[id];
+            if (id >= 0 && id < arrayAM.length) {
+                estacionSeleccionada = arrayAM[id];
                 if (estacionSeleccionada != 0.0) {
                     System.out.println("La radio se ha movido a la estación asignada en el botón " + (id + 1) +
                             " en la frecuencia AM: " + estacionSeleccionada);
-                    numberAM = estacionSeleccionada;
+                    numberAM = (int)estacionSeleccionada;
                 } else {
                     System.out.println("El botón no tiene asignada ninguna estación");
                 }
@@ -133,8 +133,8 @@ public class Radio implements IRadio {
             }
 
         } else {
-            if (id >= 0 && id < ArrayFM.length) {
-                estacionSeleccionada = ArrayFM[id];
+            if (id >= 0 && id < arrayFM.length) {
+                estacionSeleccionada = arrayFM[id];
                 if (estacionSeleccionada != 0.0) {
                     System.out.println("La radio se ha movido a la estación asignada en el botón " + (id + 1) +
                             " en la frecuencia FM: " + estacionSeleccionada);

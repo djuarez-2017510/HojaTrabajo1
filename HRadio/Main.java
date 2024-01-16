@@ -81,7 +81,6 @@ public class Main {
                 System.out.println("Debe ingresar un valor numerico");
                 scanner.nextLine();
             }
-            scanner.close();
         }
     }
 }
