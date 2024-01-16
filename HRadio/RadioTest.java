@@ -1,7 +1,7 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
+
 
 public class RadioTest {
     private Radio radio;
@@ -40,5 +40,16 @@ public class RadioTest {
         double maxAMStation = radio.nextStation(); 
         //Confirma que se llego al inicio correctamente
         assertEquals(530.0, maxAMStation, 0.001);
+    }
+
+    @Test
+    public void testSelectStationFM() {
+        // Cambia a FM para la prueba.
+        radio.SwitchAMFM(); 
+        // Guarda una estación en la posición 5 del array.
+        radio.SaveStation(5, 101.1);
+        
+        // Verifica si la frecuencia actual es igual a la estación guardada.
+        assertEquals(101.1, radio.SelectStation(5), 0.001);
     }
 }
